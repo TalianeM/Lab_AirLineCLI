@@ -1,3 +1,4 @@
+import java.lang.module.FindException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -63,17 +64,28 @@ public class Airline {
     }
 
     public void cancelFlight(){
+
+
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please input flight destination");
-        String destination = scanner.nextLine();
+//        System.out.println("Please input flight destination");
+//        String destination = scanner.nextLine();
+//
 
         System.out.println("Please input flight id");
         int id = scanner.nextInt();
+        int index = -1;
+        for(Flight flight : this.flights) {
+            if (flight.getId() == id) {
+                index = this.flights.indexOf(flight);
+            }
 
+        }
+        this.flights.remove(index);
+//                 Flight newFlight = new Flight(destination, id);
+//        this.flights.remove(newFlight);
 
-        Flight newFlight = new Flight(destination, id);
-        this.flights.remove(newFlight);
     }
 
 
@@ -110,6 +122,7 @@ public class Airline {
         System.out.println("Please input passenger id");
         int passengerId = scanner.nextInt();
 
+
         System.out.println("Please input flight id");
         int flightId = scanner.nextInt();
 
@@ -127,6 +140,8 @@ public class Airline {
                 newFlight = flight;
                 break;
             }
+
+
         }
 
         newFlight.addPassenger(newPassenger);

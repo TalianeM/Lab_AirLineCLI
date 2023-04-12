@@ -34,7 +34,11 @@ public class Runner {
         airline.setPassengers(passengers);
 
 
-        airline.addFlight();
+//        airline.addFlight();
+//        airline.cancelFlight();
+//        airline.addPassenger();
+        airline.addPassengerToFlight();
+//        airline.displayFlights();
         airline.displayFlights();
     }
 
