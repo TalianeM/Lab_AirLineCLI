@@ -58,20 +58,24 @@ public class Airline {
 //        }
 //    }
 
-    public void cancelFlight(String destination, int id){
-        Flight newFlight = new Flight(destination, id);
-        this.flights.remove(newFlight);
+    public void cancelFlight(int id){
+//        Flight newFlight = new Flight(destination, id);
+//        this.flights.remove(newFlight);
+
+        int index = -1;
+        for(Flight flight : this.flights) {
+            if (flight.getId() == id) {
+                index = this.flights.indexOf(flight);
+            }
+
+        }
+        this.flights.remove(index);
+
     }
 
     public void cancelFlight(){
 
-
-
         Scanner scanner = new Scanner(System.in);
-
-//        System.out.println("Please input flight destination");
-//        String destination = scanner.nextLine();
-//
 
         System.out.println("Please input flight id");
         int id = scanner.nextInt();
@@ -83,9 +87,6 @@ public class Airline {
 
         }
         this.flights.remove(index);
-//                 Flight newFlight = new Flight(destination, id);
-//        this.flights.remove(newFlight);
-
     }
 
 
@@ -94,6 +95,7 @@ public class Airline {
         Passenger newPassenger = new Passenger(name, contactNumber, id);
         this.passengers.add(newPassenger);
     }
+
 
     public void addPassenger(){
 
@@ -122,7 +124,6 @@ public class Airline {
         System.out.println("Please input passenger id");
         int passengerId = scanner.nextInt();
 
-
         System.out.println("Please input flight id");
         int flightId = scanner.nextInt();
 
@@ -140,8 +141,6 @@ public class Airline {
                 newFlight = flight;
                 break;
             }
-
-
         }
 
         newFlight.addPassenger(newPassenger);
@@ -173,8 +172,5 @@ public class Airline {
     public void setPassengers(ArrayList<Passenger> passengers) {
         this.passengers = passengers;
     }
-
-
-
 
 }

@@ -40,6 +40,13 @@ public class Runner {
         airline.addPassengerToFlight();
 //        airline.displayFlights();
         airline.displayFlights();
+//        airline.addFlight();
+//        airline.cancelFlight();
+//        airline.displayFlights();
+
+        for (Passenger passenger: flight1.getPassengers()){
+            System.out.println(passenger.getName());
+        }
     }
 
 }
