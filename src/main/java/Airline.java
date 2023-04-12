@@ -35,6 +35,17 @@ public class Airline {
         this.passengers.add(newPassenger);
     }
 
+    public void addPassengerToFlight(Passenger newPassenger,Flight flight){
+        flight.addPassenger(newPassenger);
+    }
+    public String displayFlights(){
+        for (Flight flight : this.flights){
+            return flight.getDestination();
+
+        }
+        return null;
+    }
+
 
 
 
