@@ -12,6 +12,7 @@ public class AirlineTest {
     public void setUp(){
         airline = new Airline();
         flight = new Flight("Berlin",1);
+        passenger = new Passenger("name2",23,8);
     }
 
     @Test
@@ -33,5 +34,16 @@ public class AirlineTest {
         assertThat(airline.getPassengers().size()).isEqualTo(1);
     }
 
+    @Test
+
+    public void canAddPassengerToFlight(){
+        airline.addPassengerToFlight(passenger,flight);
+        assertThat(flight.getPassengers().size()).isEqualTo(1);
+    }
+
+    @Test
+    public void canGetPassengers(){
+        assertThat(airline.getPassengers().size()).isEqualTo(0);
+    }
 
 }
