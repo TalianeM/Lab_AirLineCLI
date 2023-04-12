@@ -5,10 +5,8 @@ public class Airline {
 
     private ArrayList<Flight> flights;
     private ArrayList<Passenger> passengers;
-    private String name;
 
-    public Airline(String name){
-        this.name = name;
+    public Airline(){
         this.passengers = new ArrayList<Passenger>();
         this.flights = new ArrayList<Flight>();
     }
@@ -160,16 +158,6 @@ public class Airline {
     public void setPassengers(ArrayList<Passenger> passengers) {
         this.passengers = passengers;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
 
 
 
